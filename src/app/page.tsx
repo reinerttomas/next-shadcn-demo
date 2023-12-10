@@ -1,5 +1,4 @@
-import { ThemeButton } from '@/components/theme-button'
-import { Button } from '@/components/ui/button'
+import { ThemeButton } from '@/components/theme-mode'
 
 export default function Home() {
   return (
