@@ -1,8 +1,8 @@
 import { Payment } from '@/types/payment'
 import { ChevronRight } from 'lucide-react'
 import React from 'react'
-import PaymentDataTable from './data-table'
-import { columns } from './columns'
+import DataTable from '../../components/payments/data-table'
+import { Columns } from '../../components/payments/columns'
 
 export const getData = async (): Promise<Payment[]> => {
   const response = await fetch('http://localhost:8000/payments', {
@@ -36,7 +36,7 @@ export default async function Payment() {
       </div>
 
       <div className="pb-12 pt-8">
-        <PaymentDataTable columns={columns} data={payments} />
+        <DataTable columns={Columns} data={payments} />
       </div>
     </main>
   )

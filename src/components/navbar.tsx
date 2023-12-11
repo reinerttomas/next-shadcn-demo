@@ -30,10 +30,10 @@ const Navbar = () => {
         <div className="flex flex-1 items-center justify-end space-x-2">
           <nav className="flex items-center">
             <Button variant="ghost" size="icon">
-              <Github size={20} />
+              <Github className="h-5 w-5" />
             </Button>
             <Button variant="ghost" size="icon">
-              <Linkedin size={20} />
+              <Linkedin className="h-5 w-5" />
             </Button>
             <ThemeMode />
           </nav>
