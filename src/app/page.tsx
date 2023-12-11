@@ -1,4 +1,3 @@
-import { ThemeMode } from '@/components/theme-mode'
 import { ChevronRight } from 'lucide-react'
 
 export default function Home() {
@@ -25,7 +24,7 @@ export default function Home() {
         <h2 className="font-heading mt-12 pb-2 text-2xl font-semibold tracking-tight first:mt-0">
           What is Lorem Ipsum?
         </h2>
-        <p>
+        <p className="mb-8">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industrys standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and
