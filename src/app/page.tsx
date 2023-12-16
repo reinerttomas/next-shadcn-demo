@@ -2,8 +2,8 @@ import { ChevronRight } from 'lucide-react'
 
 export default function Home() {
   return (
-    <main className="container w-full max-w-4xl flex-1 items-start py-6">
-      <div className="mb-4 flex items-center space-x-1 text-sm text-muted-foreground">
+    <main className="w-full space-y-8 py-6">
+      <div className="flex items-center space-x-1 text-sm text-muted-foreground">
         <div className="overflow-hidden text-ellipsis whitespace-nowrap">
           Docs
         </div>
@@ -20,11 +20,11 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="pb-12 pt-8">
+      <div className="space-y-2">
         <h2 className="font-heading mt-12 pb-2 text-2xl font-semibold tracking-tight first:mt-0">
           What is Lorem Ipsum?
         </h2>
-        <p className="mb-8">
+        <p>
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industrys standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and

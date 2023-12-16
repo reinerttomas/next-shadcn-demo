@@ -13,12 +13,12 @@ export const getData = async (): Promise<Payment[]> => {
   return payments
 }
 
-export default async function Payment() {
+export default async function Payments() {
   const payments = await getData()
 
   return (
-    <main className="container w-full max-w-4xl flex-1 items-start py-6">
-      <div className="mb-4 flex items-center space-x-1 text-sm text-muted-foreground">
+    <main className="w-full space-y-8 py-6">
+      <div className="flex items-center space-x-1 text-sm text-muted-foreground">
         <div className="overflow-hidden text-ellipsis whitespace-nowrap">
           Docs
         </div>
@@ -35,9 +35,7 @@ export default async function Payment() {
         </p>
       </div>
 
-      <div className="pb-12 pt-8">
-        <DataTable columns={Columns} data={payments} />
-      </div>
+      <DataTable columns={Columns} data={payments} />
     </main>
   )
 }

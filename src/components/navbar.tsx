@@ -6,7 +6,7 @@ import { ThemeMode } from './theme-mode'
 const Navbar = () => {
   return (
     <header className="w-full border-b">
-      <div className="container flex max-w-4xl py-4">
+      <div className="container flex py-4">
         <div className="mr-4 flex">
           <a className="mr-6 flex items-center space-x-2" href="/">
             <Code />

@@ -9,18 +9,42 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
-import { Payment } from '@/types/payment'
+import { Payment, statuses } from '@/types/payment'
 import { ColumnDef } from '@tanstack/react-table'
 import { MoreHorizontal } from 'lucide-react'
+import { DataTableColumnHeader } from './data-table-column-header'
 
 export const Columns: ColumnDef<Payment>[] = [
   {
     accessorKey: 'email',
-    header: 'Email',
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="Email" />
+    ),
   },
   {
     accessorKey: 'status',
     header: 'Status',
+    cell: ({ row }) => {
+      const status = statuses.find(
+        (status) => status.value === row.getValue('status'),
+      )
+
+      if (!status) {
+        return null
+      }
+
+      return (
+        <div className="flex w-[100px] items-center">
+          {status.icon && (
+            <status.icon className="mr-2 h-4 w-4 text-muted-foreground" />
+          )}
+          <span>{status.label}</span>
+        </div>
+      )
+    },
+    filterFn: (row, id, value) => {
+      return value.includes(row.getValue(id))
+    },
   },
   {
     accessorKey: 'amount',

@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils'
 import Providers from '@/components/providers'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
+import React from 'react'
 
 export const fontSans = FontSans({
   subsets: ['latin'],
@@ -25,14 +26,16 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          'min-h-screen text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-50',
+          'min-h-screen bg-background font-sans antialiased',
           fontSans.variable,
         )}
       >
         <Providers>
           <div className="flex min-h-screen flex-col">
             <Navbar />
-            <div className="flex-1">{children}</div>
+            <div className="flex-1">
+              <div className="container">{children}</div>
+            </div>
             <Footer />
           </div>
         </Providers>
