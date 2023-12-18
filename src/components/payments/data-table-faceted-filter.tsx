@@ -16,7 +16,7 @@ import {
   CommandList,
   CommandSeparator,
 } from '../ui/command'
-import { cn } from '@/lib/utils'
+import { cn } from '@/libs/utils'
 
 interface DataTableFacetedFilterProps<TData, TValue> {
   column?: Column<TData, TValue>

@@ -9,10 +9,16 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
-import { Payment, statuses } from '@/types/payment'
+import { statuses } from '@/types/payment'
 import { ColumnDef } from '@tanstack/react-table'
 import { MoreHorizontal } from 'lucide-react'
 import { DataTableColumnHeader } from './data-table-column-header'
+
+type Payment = {
+  email: string
+  amount: number
+  status: string
+}
 
 export const Columns: ColumnDef<Payment>[] = [
   {

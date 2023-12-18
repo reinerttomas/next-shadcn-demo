@@ -1,20 +1,11 @@
-import { Payment } from '@/types/payment'
 import { ChevronRight } from 'lucide-react'
 import React from 'react'
 import DataTable from '../../components/payments/data-table'
 import { Columns } from '../../components/payments/columns'
-
-export const getData = async (): Promise<Payment[]> => {
-  const response = await fetch('http://localhost:8000/payments', {
-    cache: 'no-store',
-  })
-  const payments = await response.json()
-
-  return payments
-}
+import prisma from '@/libs/prisma'
 
 export default async function Payments() {
-  const payments = await getData()
+  const payments = await prisma.payment.findMany()
 
   return (
     <main className="w-full space-y-8 py-6">

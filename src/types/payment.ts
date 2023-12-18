@@ -6,7 +6,7 @@ import {
 } from 'lucide-react'
 
 export type Payment = {
-  id: string
+  id: number
   email: string
   amount: number
   status: 'pending' | 'processing' | 'success' | 'failed'
