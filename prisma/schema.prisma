@@ -16,3 +16,12 @@ model Payment {
   amount Float
   status String @db.VarChar(16)
 }
+
+model Task {
+  id Int @id @default(autoincrement())
+  code String @unique
+  title String @db.VarChar(255)
+  status String @db.VarChar(16)
+  label String @db.VarChar(16)
+  priority String @db.VarChar(8)
+}

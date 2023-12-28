@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client'
-import { payments } from './data'
+import { payments, tasks } from './data'
 const prisma = new PrismaClient()
 
 const load = async () => {
@@ -9,6 +9,12 @@ const load = async () => {
 
     await prisma.payment.createMany({ data: payments })
     console.log('Added payment data.')
+
+    await prisma.$queryRaw`TRUNCATE "Task" RESTART IDENTITY`
+    console.log('Deleted records in task table')
+
+    await prisma.task.createMany({ data: tasks })
+    console.log('Added task data.')
   } catch (e) {
     console.error(e)
     process.exit(1)
