@@ -8,7 +8,7 @@ export default async function Payments() {
   const payments = await prisma.payment.findMany()
 
   return (
-    <main className="w-full space-y-8 py-6">
+    <main className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
       <div className="flex items-center space-x-1 text-sm text-muted-foreground">
         <div className="overflow-hidden text-ellipsis whitespace-nowrap">
           Docs
@@ -16,7 +16,6 @@ export default async function Payments() {
         <ChevronRight size={16} />
         <div className="font-medium text-foreground">Payments</div>
       </div>
-
       <div className="space-y-2">
         <h1 className="scroll-m-20 text-4xl font-bold tracking-tight">
           Payments
@@ -25,7 +24,6 @@ export default async function Payments() {
           Displays a button or a component that looks like a button.
         </p>
       </div>
-
       <DataTable columns={Columns} data={payments} />
     </main>
   )
